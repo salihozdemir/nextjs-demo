@@ -21,12 +21,10 @@ export default async function Category({
   const data = await getProductsByCategory(params.categoryId);
 
   return (
-    <div className="container">
-      <div className="grid grid-cols-4 gap-4">
-        {data.map((product) => (
-          <ProductCard key={product.id} product={product} />
-        ))}
-      </div>
+    <div className="grid grid-cols-3 gap-4">
+      {data.map((product) => (
+        <ProductCard key={product.id} product={product} />
+      ))}
     </div>
   );
 }
