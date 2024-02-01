@@ -1,8 +1,10 @@
 import { ProductCard } from "@/components/product-card";
 import { Product } from "@/types/index";
 
-async function getProductsByCategory(category: string) {
-  const res = await fetch("https://react-shop-backend.liara.run/products");
+async function getProductsByCategory(categoryId: number) {
+  const res = await fetch(
+    `https://web-production-362f8.up.railway.app/api/v1/products/?categoryId=${categoryId}`,
+  );
 
   if (!res.ok) {
     throw new Error("Failed to fetch data");
@@ -14,9 +16,9 @@ async function getProductsByCategory(category: string) {
 export default async function Category({
   params,
 }: {
-  params: { category: string };
+  params: { categoryId: number };
 }) {
-  const data = await getProductsByCategory(params.category);
+  const data = await getProductsByCategory(params.categoryId);
 
   return (
     <div className="container">

@@ -31,7 +31,7 @@ export default async function Home() {
   const popularProducts = await getPopularProducts();
 
   return (
-    <div className="container p-4">
+    <div className="container">
       <h1 className="my-4 text-3xl font-bold">Popular Products</h1>
       <ProductCarousel products={popularProducts} />
       <h1 className="my-4 text-3xl font-bold">Categories</h1>
