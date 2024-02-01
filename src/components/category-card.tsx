@@ -8,7 +8,7 @@ type CategoryCardProps = {
 
 export const CategoryCard = ({ category }: CategoryCardProps) => {
   return (
-    <Link href={`/${category.id}`}>
+    <Link href={`/categories/${category.id}`}>
       <div className="relative">
         <Image
           className="rounded-sm"

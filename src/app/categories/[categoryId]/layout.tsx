@@ -29,7 +29,7 @@ export default async function Layout({
           {categories.map((category) => (
             <li key={category.id}>
               <Link
-                href={`/${category.id}`}
+                href={`/categories/${category.id}`}
                 className={
                   params.categoryId == category.id
                     ? "text-blue-500"
