@@ -1,7 +1,7 @@
 import { ProductCard } from "@/components/product-card";
 import { Product } from "@/types/index";
 
-async function getProductsByCategory(categoryId: number) {
+async function getProductsByCategory(categoryId: string) {
   const res = await fetch(
     `https://web-production-362f8.up.railway.app/api/v1/products/?categoryId=${categoryId}`,
   );
@@ -16,7 +16,7 @@ async function getProductsByCategory(categoryId: number) {
 export default async function Category({
   params,
 }: {
-  params: { categoryId: number };
+  params: { categoryId: string };
 }) {
   const data = await getProductsByCategory(params.categoryId);
 
