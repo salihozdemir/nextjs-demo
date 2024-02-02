@@ -1,10 +1,7 @@
-"use client";
-
 import Image from "next/image";
 import Link from "next/link";
 import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
-import { useCart } from "@/hooks/useCart";
+import { AddToCartButton } from "./add-to-cart-button";
 import { Product } from "@/types/index";
 
 type ProductCardProps = {
@@ -12,8 +9,6 @@ type ProductCardProps = {
 };
 
 export const ProductCard = ({ product }: ProductCardProps) => {
-  const { addItem } = useCart();
-
   return (
     <div className="rounded-sm border p-4">
       <Link href={`/product/${product.id}`} prefetch>
@@ -36,12 +31,7 @@ export const ProductCard = ({ product }: ProductCardProps) => {
       </Link>
       <div className="mt-2 flex items-center justify-between">
         <p className="text-lg font-bold">$ {product.price.toLocaleString()}</p>
-        <Button
-          size="sm"
-          onClick={() => addItem({ productId: product.id, quantity: 1 })}
-        >
-          Add To Cart
-        </Button>
+        <AddToCartButton productId={product.id} size="sm" />
       </div>
     </div>
   );

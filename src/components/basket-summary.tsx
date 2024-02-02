@@ -1,6 +1,3 @@
-"use client";
-
-import { useEffect, useState } from "react";
 import { CheckoutProduct } from "@/types/index";
 
 type BasketSummaryProps = {
