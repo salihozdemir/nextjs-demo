@@ -1,7 +1,6 @@
 import Link from "next/link";
 import { ImageViewer } from "@/components/image-viewer";
 import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
 import { Product } from "@/types/index";
 import { AddToCartButton } from "@/components/add-to-cart-button";
 

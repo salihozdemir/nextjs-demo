@@ -1,5 +1,4 @@
-import Link from "next/link";
-import { Button } from "@/components/ui/button";
+import { CheckoutButton } from "@/components/checkout-button";
 import { CheckoutProduct } from "@/types/index";
 
 type BasketSummaryProps = {
@@ -43,9 +42,7 @@ export const BasketSummary = ({ products }: BasketSummaryProps) => {
           </div>
         </div>
         <div className="p-4">
-          <Button className="w-full" asChild>
-            <Link href="/order-success">Checkout</Link>
-          </Button>
+         <CheckoutButton />
         </div>
       </div>
     </div>
