@@ -35,7 +35,7 @@ export default async function Home() {
       <h1 className="my-4 text-3xl font-bold">Popular Products</h1>
       <ProductCarousel products={popularProducts} />
       <h1 className="my-4 text-3xl font-bold">Categories</h1>
-      <div className="grid grid-cols-3 items-center gap-4">
+      <div className="grid grid-cols-1 items-center gap-4 sm:grid-cols-2 md:grid-cols-3">
         {categories.map((category) => (
           <CategoryCard key={category.id} category={category} />
         ))}

@@ -1,11 +1,12 @@
+"use client";
+
 import Link from "next/link";
 import Image from "next/image";
+import Autoplay from "embla-carousel-autoplay";
 import {
   Carousel,
   CarouselContent,
   CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
 } from "@/components/ui/carousel";
 import { Product } from "@/types/index";
 
@@ -15,10 +16,20 @@ type ProductCarouselProps = {
 
 export const ProductCarousel = ({ products }: ProductCarouselProps) => {
   return (
-    <Carousel>
-      <CarouselContent className="-ml-2 md:-ml-4">
+    <Carousel
+      opts={{
+        dragFree: true,
+        loop: true,
+      }}
+      plugins={[
+        Autoplay({
+          delay: 2000,
+        }),
+      ]}
+    >
+      <CarouselContent>
         {products.map((product) => (
-          <CarouselItem key={product.id} className="md:basis-1/2 lg:basis-1/3">
+          <CarouselItem key={product.id} className="basis-1/2 lg:basis-1/3">
             <Link href={`/product/${product.id}`} prefetch>
               <Image
                 className="rounded-sm transition hover:opacity-75"
@@ -31,8 +42,6 @@ export const ProductCarousel = ({ products }: ProductCarouselProps) => {
           </CarouselItem>
         ))}
       </CarouselContent>
-      <CarouselPrevious />
-      <CarouselNext />
     </Carousel>
   );
 };
