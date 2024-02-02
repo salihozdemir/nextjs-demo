@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import { Header } from "@/components/header";
+import { CartProvider } from "@/components/cart-provider";
 import { cn } from "@/lib/utils";
 import "../styles/globals.css";
 
@@ -17,15 +18,17 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body
         className={cn(
           "min-h-screen bg-background font-sans antialiased",
           inter.variable,
         )}
       >
-        <Header />
-        <main className="p-4">{children}</main>
+        <CartProvider>
+          <Header />
+          <main className="p-4">{children}</main>
+        </CartProvider>
       </body>
     </html>
   );

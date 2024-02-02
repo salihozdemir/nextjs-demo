@@ -12,3 +12,8 @@ export type Category = {
   name: string;
   image: string;
 };
+
+export type CheckoutProduct = Product & {
+  quantity: number;
+};
+
