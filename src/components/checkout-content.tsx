@@ -27,7 +27,7 @@ export const CheckoutContent = ({ basketProducts }: CheckoutContentProps) => {
   }
 
   return (
-    <div className="flex gap-8">
+    <div className="flex flex-col gap-8 md:flex-row">
       <BasketTable products={products} setProducts={setProducts} />
       <BasketSummary products={products} />
     </div>

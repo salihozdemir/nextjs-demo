@@ -29,7 +29,7 @@ export const BasketTable = ({ products, setProducts }: BasketTableProps) => {
   };
 
   return (
-    <Table>
+    <Table className="min-w-[600px]">
       <TableCaption>
         Your basket contains {products.length}{" "}
         {products.length > 1 ? "items" : "item"}
@@ -37,8 +37,8 @@ export const BasketTable = ({ products, setProducts }: BasketTableProps) => {
       <TableHeader>
         <TableRow>
           <TableHead>Product</TableHead>
-          <TableHead className="w-[100px] text-center">Price</TableHead>
-          <TableHead className="w-[100px] text-center">Quantity</TableHead>
+          <TableHead className="text-center">Price</TableHead>
+          <TableHead className="text-center">Quantity</TableHead>
           <TableHead className="text-right">Subtotal</TableHead>
           <TableHead className="text-right">Actions</TableHead>
         </TableRow>

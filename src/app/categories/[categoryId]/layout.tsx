@@ -23,17 +23,17 @@ export default async function Layout({
   const categories = await getCategories();
 
   return (
-    <div className="container flex">
-      <div className="w-64 flex-shrink-0">
-        <ul className="flex flex-col gap-4">
+    <div className="container relative flex flex-col sm:flex-row">
+      <div className="w-48 flex-shrink-0 mb-4">
+        <ul className="flex gap-4 sm:sticky sm:top-20 sm:flex-col">
           {categories.map((category) => (
             <li key={category.id}>
               <Link
                 href={`/categories/${category.id}`}
                 className={
                   params.categoryId == category.id
-                    ? "text-blue-500"
-                    : "text-gray-500"
+                    ? "font-bold underline underline-offset-4"
+                    : ""
                 }
               >
                 {category.name}
